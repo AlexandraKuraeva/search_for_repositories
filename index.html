@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	 <link rel="stylesheet" href="./css/style.css">
+    <title>GihHub Repos Searching</title>
+  </head>
+  <body>
+	<div class="wrapper">
+    <header class="header">
+      <div class="container">
+        <h1>GihHub Repos Searching</h1>
+      </div>
+    </header>
+    <main>
+		<div class="container">
+			<div class="contant__search">
+				<form  class="form-search">
+					<div class="form-search__group">
+						<label for="searchString">Введите подстроку для поиска:</label>
+						<input type="text" class="form-search__input" id="search-field" name="searchString">
+						
+					</div>
+					<button class="form-search__btn" id="search-btn" type="submit">Поиск</button>
+				</form>
+			</div>
+			
+			<div class="contant__repos" >
+				<div class="contant__load load" id="loadingIndicator">
+					<p class="load__text">Идет загрузка...</p>
+				</div>
+				<ul class="repos__list" id="repos"></ul>
+			</div>
+		</div>
+	 </main>
+    <footer class="footer">My GitHub profile <a href="https://github.com/AlexandraKuraeva">here</a> </footer>
+	 </div>
+	 <script src="./js/index.js"></script>
+  </body>
+</html>
+
+

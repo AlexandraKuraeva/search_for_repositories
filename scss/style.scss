@@ -1,0 +1,156 @@
+@import url("../css/nullstyle.css");
+body {
+	background: #a9cbe3a3;
+	color: #1b1a17;
+	font-family: "Roboto", sans-serif;
+	font-style: normal;
+	font-weight: 400;
+	font-size: 20px;
+}
+
+#loadingIndicator {
+	display: none; /* Скрытое изначально */
+}
+
+main {
+	flex: 1 0 auto;
+}
+
+a {
+	color: #1f5ed2;
+	transition: all 0.1s;
+	&:hover{
+		color: #1fa2d2;
+	}
+}
+.wrapper {
+	display: flex;
+	flex-direction: column;
+	min-height: 100%;
+}
+.header,
+.footer {
+	margin-top: 15px;
+	background-color: #4ca5e4a3;
+	text-align: center;
+	padding: 40px;
+}
+.container {
+	width: 100%;
+	margin: 0 auto;
+	padding: 0 15px;
+	max-width: 1170px;
+}
+.contant {
+	&__search {
+		margin: 30px 0;
+	}
+
+	&__repos {
+	}
+}
+.form-search {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	&__group {
+		position: relative;
+		padding: 20px;
+	}
+
+	&__input {
+		margin-top: 10px;
+		display: block;
+		padding: 5px;
+		border: 2px solid #4ca5e4;
+		border-radius: 10px;
+		width: 100%;
+		&.error-input {
+			border: 2px solid #e44c63;
+		}
+	}
+
+	&__btn {
+		margin-top: 15px;
+		padding: 5px;
+		background-color: #4ca5e4;
+		color: #fff;
+		border-radius: 10px;
+		width: 20%;
+		transition: all 0.3s;
+	}
+}
+
+.load {
+}
+
+.error {
+	position: absolute;
+	bottom: -5px;
+	left: 20px;
+	color: #e44c63;
+}
+
+.repos {
+	&__list {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 20px;
+	}
+
+	&__item {
+	}
+}
+.repo {
+	display: flex;
+	flex-direction: column;
+	border: 3px solid rgb(32, 148, 220);
+	background-color: #e9eff4;
+	border-radius: 10px;
+
+	padding: 10px;
+	&__top {
+		display: grid;
+		grid-template-columns: 120px 1fr;
+		grid-template-rows: 1fr 1fr;
+		align-items: center;
+		margin-bottom: 15px;
+		column-gap: 10px;
+	}
+
+	&__avatar {
+		border-radius: 50px;
+		grid-area: 1/1/3/2;
+		max-width: 100%;
+		max-height: 100%;
+	}
+
+	&__owner {
+		font-weight: 700;
+	}
+
+	&__name {
+		line-height: 1.3;
+		font-weight: 700;
+	}
+
+	&__description {
+		margin-bottom: 15px;
+	}
+
+	&__language {
+		margin-top: auto;
+	}
+
+	&__span {
+		font-weight: 700;
+		color: #057af8;
+	}
+}
+
+
+.not__found{
+	width: 500px;
+	margin: 0 auto;
+}
