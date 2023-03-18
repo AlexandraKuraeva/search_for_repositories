@@ -1,69 +1,5 @@
 'use strict';
 
-// const searchBtn = document.getElementById('search-btn'); // Кнопка поиска
-// const inputField = document.getElementById('search-field'); // Поле ввода
-// const reposList = document.getElementById('repos'); // Элемент, в котором будет отображаться результат
-
-// Обработчик нажатия кнопки поиска
-// searchBtn.addEventListener('click', (event) => {
-//   event.preventDefault();
-//   const searchQuery = inputField.value; // Получаем значение из поля ввода
-//   console.log(searchQuery);
-//   const apiUrl = `https://api.github.com/search/repositories?q=${searchQuery}`; // Формируем URL запроса
-
-//   //   Выполняем запрос
-//   fetch(apiUrl)
-//     .then((response) => response.json()) // Преобразуем ответ в JSON
-//     .then((data) => {
-//       // При успешном выполнении запроса обрабатываем результат
-//       reposList.innerHTML = ''; // Очищаем результаты предыдущего поиска
-//       const items = data.items.slice(0, 10);
-//       console.log(items);
-//       // Создаем элементы списка репозиториев и добавляем их в результирующий блок
-//       const repositories = items.map((item) => {
-//         let link = `<a href="${item.html_url}" target="_blank">${item.name}</a>`; // Ссылка на репозиторий
-//         return `<li>${link}</li>`;
-//       });
-//       reposList.innerHTML = `<ul>${repositories.join('')}</ul>`;
-//     })
-//     .catch((error) => console.error(error));
-// });
-
-// const searchRepositories = async (query) => {
-//   const url = `https://api.github.com/search/repositories?q=${query}`;
-//   const response = await fetch(url);
-//   const data = await response.json();
-//   console.log(data)
-//   const repositories = data.items.map((item) => ({
-//     name: item.name,
-//     url: item.html_url,
-//   }));
-//   return repositories;
-// };
-
-// Пример использования функции
-// searchRepositories(inputField.value).then((repositories) => {
-//   repositories.forEach((repository) => {
-//     console.log(repository.name, repository.url);
-//   });
-// });
-
-// fetch(apiUrl)
-//   .then(response => response.json())
-//   .then(data => {
-//     result.innerHTML = '';
-//     const items = data.items.slice(0, 10);
-//     // Используем метод map() для получения нового массива из элементов репозиториев, преобразованных в элементы списка
-//     const repositories = items.map(item => {
-//       const link = `<a href="${item.html_url}">${item.full_name}</a>`;
-//       return `<li>${link}</li>`;
-//     });
-//     // Объединяем все элементы списка вместе
-//     result.innerHTML = `<ul>${repositories.join('')}</ul>`;
-//   })
-//   .catch(error => {
-//     console.error(error);
-//   });
 const searchBtn = document.getElementById('search-btn'); // Кнопка поиска
 const inputField = document.getElementById('search-field'); // Поле ввода
 const reposList = document.getElementById('repos'); // Элемент, в котором будет отображаться результат
@@ -150,16 +86,13 @@ function insertItemsList(repo) {
 			<div class="repo__name">Название репозитория:
 				<a href="${repo.url}" target="_blank">${repo.name}</a>
 			</div>
-		
 	</div>
-	
 		<div class="repo__description">
 		${repo.description === null ? 'У этого репазитория нет описания &#128532' : repo.description}</div>
 		<div class="repo__language">
 			Основной язык: 
 			<span class="repo__span">${repo.language || '-'}</span>
 		</div>
-	
 </li>`;
   reposList.innerHTML += out;
 }
@@ -167,7 +100,6 @@ function insertItemsList(repo) {
 function showNoReposFound(value) {
   let out = `
 <div class="not__found"><p>По запросу "${value}" ничего не найдено</p></div>`;
-
   reposList.innerHTML += out;
 }
 
@@ -195,7 +127,6 @@ function getValidationResult(valueInput) {
 }
 //Показать блок ошибки
 function showError(field, error) {
- 
   //Проверим отображается ли уже ошибка
   const elemBox = field.closest('.form-search__group');
   const errorBox = elemBox.querySelector('.error');
