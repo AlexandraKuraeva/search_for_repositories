@@ -83,7 +83,7 @@ function insertItemsList(repo) {
 			<div class="repo__owner">Владелец:
 				<a href="${repo.owner.url}" target="_blank">${repo.owner.login}</a>
 			</div>
-			<div class="repo__name">Название репозитория:
+			<div class="repo__name">Репозиторий:
 				<a href="${repo.url}" target="_blank">${repo.name}</a>
 			</div>
 	</div>
